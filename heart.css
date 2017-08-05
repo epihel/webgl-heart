@@ -1,0 +1,46 @@
+body {
+	background-color: #000;
+	color: #fff;
+	font-family: Helvetica;
+	margin: 0px;
+	overflow: hidden;
+}
+canvas, #button-wrapper, #legend { position: absolute; }
+
+#webgl-canvas { z-index: 1; }
+#label-canvas { display: none; }
+
+#button-wrapper, #legend { left: 20px; }
+#label-canvas, #button-wrapper { z-index: 3; }
+
+#button-wrapper {
+	color: #fff;
+	display: block;
+	top: 50px;
+	width: 100%;
+}
+
+button, #legend { font-size: 16px; }
+button {
+	background-color: green;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	user-select: none;
+	width: 170px;
+}
+
+#legend {
+	display: none;
+	text-align: left;
+	top: 200px;
+	width: 100%;
+	z-index: 2;
+}
+
+ol { padding-left: 20px; }
+li { padding-bottom: 5px; }

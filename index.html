@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>WebGL Heart</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link href="heart.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<canvas id="label-canvas"></canvas>
+		<canvas id="webgl-canvas"></canvas>
+		
+		<div id="button-wrapper">
+			<p><button id="heart-button" type="button" onclick="toggleHeartFront()">Separate</button></p>
+			<p><button id="label-button" type="button" onclick="toggleLabels()">Show Labels</button></p>
+		</div>
+		
+		<div id="legend">
+			<ol>
+				<li>Aorta</li>
+				<li>Arch of the aorta</li>
+				<li>Left auricular appendage</li>
+				<li>Pulmonary artery</li>
+				<li>Pulmonary veins</li>
+				<li>Vena cava superior</li>
+			</ol>
+		</div>
+
+		<script src="js/vendor/three.min.js"></script>
+		<script src="js/vendor/Detector.js"></script>
+		<script src="js/vendor/OBJLoader.js"></script>
+		<script src="js/vendor/stats.min.js"></script>
+		<script src="js/vendor/three-mtl-loader.js"></script>
+		<script src="js/vendor/TrackballControls.js"></script>
+		<script src="js/vendor/Tween.js"></script>
+
+		<script src="js/heart-loader.js"></script>
+		<script src="js/webgl-utils.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+</html>
