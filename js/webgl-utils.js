@@ -1,18 +1,17 @@
 var WebglUtils = {
 	/**
 	 * Adds frame-per-second statistics to debug during development.
-	 * @param left  the stats' absolute left position
-	 * @param top  the stats' absolute top position
-	 * @param zIndex  the stats' zIndex
+	 * @param styles  the stats' css styles, which must include position attributes
+	 * (e.g., 'bottom,' 'left,' 'right,' and/or 'top')
 	 */
-	addStats: function(left, top, zIndex) {
+	addStats: function(styles) {
 		var stats = new Stats();
 		var elem = stats.domElement;
 		var s = elem.style;
-		s.left = left + 'px';
 		s.position = 'absolute';
-		s.top = top + 'px';
-		s.zIndex = zIndex;
+		for (var cssProp in styles) {
+			s[cssProp] = styles[cssProp];
+		}
 		var statsContainer = document.createElement('div');
 		statsContainer.appendChild(elem);
 		document.body.appendChild(statsContainer);

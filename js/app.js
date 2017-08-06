@@ -83,10 +83,7 @@ function createRenderer() {
 	renderer.setSize(window.innerWidth, window.innerHeight);
 
 	if (ADD_STATS) {
-		var left = 20;
-		var top = 0;
-		var zIndex = 2;
-		stats = WebglUtils.addStats(left, top, zIndex);
+		stats = WebglUtils.addStats({ left: '20px', top: '0px', 'z-index': 2 });
 	}
 	
 	window.addEventListener('resize', viewportResized);
