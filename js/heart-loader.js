@@ -5,7 +5,7 @@ var HeartLoader = {
 		var mtlFileName = name + '.mtl';
 		var objFileName = name + '.obj';
 
-		var mtlLoader = new MTLLoader();
+		var mtlLoader = new THREE.MTLLoader();
 		mtlLoader.setPath(path);
 		mtlLoader.load(mtlFileName, function(materials) {
 			materials.preload();

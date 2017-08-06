@@ -116,7 +116,7 @@ function animate() {
 		TWEEN.update();
 	}
 	if (labelCanvas.style.display === 'inline') {
-		checkLabels();
+		positionLabels();
 	}
 	renderer.render(scene, camera);
 	requestAnimationFrame(animate);
@@ -136,7 +136,7 @@ function addLight(x, y, z) {
 	scene.add(light);
 }
 
-function checkLabels() {
+function positionLabels() {
 	// why is this needed? without it, the labels don't get redrawn when rotating the heart
 	labelCanvas.width = labelCanvas.width;
 
@@ -190,7 +190,7 @@ function toggleLabels() {
 	document.getElementById('label-button').innerHTML = (show ? 'Hide' : 'Show') + ' Labels';
 }
 
-function toggleHeartFront() {
+function moveHeart() {
 	movingHeart = true;
 	var duration = 1000;
 	var heartFront = scene.getObjectByName(HEART.front.id, true);
