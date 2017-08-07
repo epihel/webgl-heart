@@ -54,7 +54,7 @@ function createScene() {
 	var near = 1;
 	var far = 2000;
 	camera = new THREE.PerspectiveCamera(viewField, aspectRatio, near, far);
-	WebglUtils.set(camera.position, -42, 4, -1);
+	camera.position.set(-42, 4, -1);
 
 	// enable rotating the heart
 	trackballControls = new THREE.TrackballControls(camera);
@@ -92,7 +92,7 @@ function createRenderer() {
 function loadModels(cb) {
 	HeartLoader.loadWavefrontModel('heart-back', function(heartBack) {
 		heartBack.name = HEART.back.id;
-		WebglUtils.set(heartBack.position, 32, -3, 3);
+		heartBack.position.set(32, -3, 3);
 		heartBack.rotation.x = HEART.rotation.x;
 		scene.add(heartBack);
 
@@ -100,7 +100,7 @@ function loadModels(cb) {
 			heartFront.name = HEART.front.id;
 			WebglUtils.copyKvps(HEART.front.pos, heartFront.position);
 			WebglUtils.copyKvps(HEART.rotation, heartFront.rotation);
-			WebglUtils.set(heartFront.scale, 4, 4, 4);
+			heartFront.scale.set(4, 4, 4);
 			scene.add(heartFront);
 			cb();
 		});
@@ -131,8 +131,8 @@ function viewportResized() {
 
 function addLight(x, y, z) {
 	var light = new THREE.DirectionalLight(0xffeedd, 0.7);
-	WebglUtils.set(light.position, x, y, z);
-	light.position.normalize();
+	light.position.set(x, y, z).normalize();
+	//light.position.normalize();
 	scene.add(light);
 }
 

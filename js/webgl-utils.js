@@ -26,15 +26,6 @@ var WebglUtils = {
 	},
 
 	/**
-	 * Sets the x, y, and z properties of any object.
-	 */
-	set: function(obj, x, y, z) {
-		obj.x = x;
-		obj.y = y;
-		obj.z = z;
-	},
-
-	/**
 	 * Shallow copies the properties from the given object.
 	 * In Three.js, `obj.position = otherPosition` doesn't work.
 	 * @param srcMap  the source properties
